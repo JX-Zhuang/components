@@ -1,0 +1,69 @@
+@import "../../style/index.scss";
+$message-prefix-cls: genPrefix(message);
+.#{$message-prefix-cls} {
+	position: fixed;
+	z-index: $zindex-message;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: $font-size-base;
+	text-align: center;
+	&-content {
+		&-box {
+			font-size: 0;
+            transition: all .1s;
+            height: 60px;
+			&-box-leave {
+				height: 0;
+			}
+		}
+		background:$component-background;
+		padding: 0 10px;
+		height: 40px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		transform-origin: 0 0;
+		-webkit-animation: #{$message-prefix-cls}-show .1s linear;
+		animation: #{$message-prefix-cls}-show .1s linear;
+		box-shadow: $message-box-shadow;
+		margin: 10px;
+		overflow: hidden;
+		transition: all .1s;
+		font-size: $font-size-base;
+		opacity: 1;
+		&-leave {
+			height: 0;
+			margin: 0;
+			opacity: 0;
+		}
+		&-success {
+			color: $success-color;
+		}
+		&-info {
+			color: $primary-color;
+		}
+		&-error {
+			color: $error-color;
+		}
+		&-warning {
+			color: $warning-color;
+		}
+		&-text {
+			font-size: $font-size-sm;
+			margin-left: 10px;
+			color: $heading-color;
+		}
+	}
+}
+
+@keyframes #{$message-prefix-cls}-show {
+	0% {
+		opacity: 0;
+		transform: scaleY(0);
+	}
+	100% {
+		opacity: 1;
+		transform: scaleY(100%);
+	}
+}

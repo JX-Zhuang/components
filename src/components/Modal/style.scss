@@ -1,0 +1,78 @@
+@import "../../style/index.scss";
+$modal-prefix-cls: genPrefix(modal);
+.#{$modal-prefix-cls} {
+	position: relative;
+	background: $component-background;
+	padding: $modal-padding;
+	border-radius: $border-radius-base;
+	// transform: scale(0);
+	// opacity: 0;
+	// transition: all .2s;
+	// &-show {
+	// 	transform: scale(1);
+	// 	opacity: 1;
+	// }
+	&-mask {
+		align-items: center;
+		justify-content: center;
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: $zindex-modal-mask;
+		background: transparent;
+		transition: all .2s;
+		opacity: 0;
+		display: none;
+		// transform: scale(0);
+		&-show {
+			display: flex;
+			opacity: 1;
+			// transform: scale(1);
+			background: $modal-mask-bg;
+		}
+	}
+	&-title {
+		color: $modal-title-color;
+		font-size: $modal-title-font-size;
+		text-align: center;
+		padding-bottom: $modal-title-padding-bottom;
+	}
+	&-content {
+		width: $modal-content-min-width;
+		margin-bottom: $modal-content-marign-bottom;
+	}
+	&-close-btn {
+		width: $modal-close-btn-size;
+		height: $modal-close-btn-size;
+		border-radius: $modal-close-btn-size;
+		cursor: pointer;
+		background: $link-color;
+		top: 12px;
+		right: 13px;
+		@include close($modal-close-btn-size * .8 ,2px ,#fff);
+		position: absolute;
+	}
+	&-footer {
+		display: flex;
+		justify-content: space-between;
+		& > button {
+			width: $modal-footer-width;
+			font-weight: $modal-footer-font-weight;
+			height: $modal-footer-height;
+			&:first-child {
+				color: $modal-footer-cancel-color;
+				// margin-right: $modal-footer-button-space;
+			}
+		}
+	}
+	&-confirm {
+		padding: $modal-confirm-padding;
+		&-content {
+			text-align: center;
+			margin-bottom: $modal-confirm-content-margin-bottom;
+			color: $modal-confirm-content-color;
+		}
+	}
+}

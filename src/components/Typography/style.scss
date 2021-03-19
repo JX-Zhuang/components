@@ -1,0 +1,39 @@
+@import '../../style/index.scss';
+$typography-prefix-cls: genPrefix(typography);
+.#{$typography-prefix-cls} {
+	margin: 0;
+	padding: 0;
+	&-text {
+		font-weight: $typography-text-font-weight;
+		color: $typography-text-color-base;
+		font-size: $typography-text-font-size-base;
+		line-height: $typography-text-line-hight-base;
+		&-small {
+			font-size: $typography-text-font-size-sm;
+			line-height: $typography-text-line-hight-sm;
+		}
+		&-secondary {
+			color: $typography-text-color-secondary;
+		}
+	}
+}
+h1.#{$typography-prefix-cls} {
+	font-size: $typography-h1-font-size;
+	color: $typography-h1-color;
+	font-weight: $typography-h1-font-weight;
+}
+h2.#{$typography-prefix-cls} {
+	font-size: $typography-h2-font-size;
+	color: $typography-h2-color;
+	font-weight: $typography-h2-font-weight;
+}
+h3.#{$typography-prefix-cls} {
+	font-size: $typography-h3-font-size;
+	color: $typography-h3-color;
+	font-weight: $typography-h3-font-weight;
+}
+h4.#{$typography-prefix-cls} {
+	font-size: $typography-h4-font-size;
+	color: $typography-h4-color;
+	font-weight: $typography-h4-font-weight;
+}

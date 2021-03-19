@@ -1,0 +1,76 @@
+@import "../../style/index.scss";
+$steps-prefix-cls: genPrefix(steps);
+.#{$steps-prefix-cls} {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	padding-bottom: 30px;
+	&-item-box {
+        position: relative;
+        width:$steps-item-size;
+		display: flex;
+		align-items: center;
+		justify-items: center;
+		flex-direction: column;
+        color: $steps-item-color;
+        &:last-child{
+            .#{$steps-prefix-cls}-line{
+                marign-top:15px;
+                display: none;
+            } 
+        }
+	}
+	&-item {
+		position: relative;
+		display: flex;
+		flex-wrap: nowrap;
+        align-items: center;
+	}
+	&-ball {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: $steps-item-ball-size;
+		height: $steps-item-ball-size;
+		background: $steps-item-bg;
+		border-radius: 100%;
+		font-size: $steps-item-font-size;
+        font-weight: $steps-item-font-weight;
+        cursor: pointer;
+	}
+	&-title {
+		display: none;
+	}
+	&-active {
+		.#{$steps-prefix-cls} {
+			&-title {
+                margin-top:15px;
+				display: block;
+				font-size: $steps-title-font-size;
+				font-weight: $steps-title-font-weight;
+				white-space: nowrap;
+			}
+			&-ball {
+				background: $steps-item-color;
+				color: $steps-item-bg;
+				span {
+					display: flex;
+					width: $steps-active-size;
+					height: $steps-active-size;
+					border-radius: 100%;
+					border: 2px solid $steps-item-bg;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+		}
+	}
+	&-line {
+        position: absolute;
+        left:$steps-item-ball-size;
+		width: $steps-line-width;
+		height: $steps-line-height;
+		background: $steps-line-bg;
+		margin: $steps-line-margin;
+	}
+}

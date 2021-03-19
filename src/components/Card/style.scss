@@ -1,0 +1,50 @@
+@import '../../style/index.scss';
+$card-prefix-cls: genPrefix(card);
+.#{$card-prefix-cls} {
+	background: $card-bg;
+	border-radius: $card-border-radius;
+	box-shadow: $box-shadow-base;
+	overflow: hidden;
+	// transition: all .5s;
+	// perspective:10px;
+	// animation: $card-prefix-cls 5s linear;
+	// transform: rotateX(0deg) scale(1) translateX(0px) translateY(0px);
+	// @keyframes #{$card-prefix-cls} {
+	// 	0%{
+	// 		transform: rotateX(0deg) scale(1) translateX(0px) translateY(0px);
+	// 	}
+	// 	50%{
+	// 		transform: rotateX(360deg) scale(1) translateX(0px) translateY(0px);
+	// 	}
+	// 	// 75%{
+	// 	// 	transform: rotateX(0deg) scale(1) translateX(0px) translateY(0px);
+	// 	// }
+	// 	100% {
+	// 		transform: rotateX(0deg) scale(1) translateX(0px) translateY(0px);
+	// 	}
+	// }
+	// &:hover {
+	// 	transform: rotateX(-20deg) scale(1.03) translateX(0px) translateY(0px);
+	// }
+	&-img {
+		width: 100%;
+	}
+	//todo 重复代码
+	&-body {
+		padding: $card-body-padding;
+		&-title {
+			font-size: $card-title-font-size;
+			color: $card-title-color;
+			font-weight: $card-title-font-weight;
+			margin-bottom: $card-title-margin-bottom;
+			@include textOverflow;
+		}
+		&-description {
+			font-size: $card-desc-font-size;
+			color: $card-desc-color;
+			font-weight: $card-desc-font-weight;
+			margin-bottom: $card-desc-margin-bottom;
+			@include textOverflow;
+		}
+	}
+}

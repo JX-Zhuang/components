@@ -1,0 +1,46 @@
+@import '../../style/index.scss';
+$input-prefix-cls: genPrefix(input);
+.#{$input-prefix-cls} {
+	font-size: $input-font-size;
+	width: 100%;
+	margin-bottom: $input-marinBottom;
+	input {
+		outline: none;
+		border: none;
+		background: transparent;
+		flex:1;
+		box-sizing: border-box;
+		padding: $input-padding;
+		&::placeholder {
+			color: $input-placeholder-color;
+		}
+	}
+	&-box {
+		color: $text-color;
+		background: $input-bg;
+		position: relative;
+		border: $input-border;
+        border-radius: $input-border-radius;
+        display: flex;
+        align-items: center;
+		flex-wrap: nowrap;
+		overflow: hidden;
+	}
+
+	&-focus {
+		.#{$input-prefix-cls}-box {
+			border-color: $input-focus-border-color;
+		}
+	}
+	&-error {
+		.#{$input-prefix-cls}-box {
+			border-color: $input-error-color;
+		}
+		&-message {
+			color: $input-error-color;
+			text-align: right;
+            font-size: $input-error-message-font-size;
+            margin-top:$input-error-message-marginTop;
+		}
+	}
+}

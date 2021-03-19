@@ -1,0 +1,265 @@
+// The prefix to use on all css classes
+$style-prefix: style-;
+
+@function genPrefix($prefixCls) {
+	@return #{$style-prefix}$prefixCls;
+}
+
+// colors
+$primary-color: #7c80ee !default; // 全局主色
+$link-color: #7cc1f9 !default; // 链接色
+$success-color: #52c41a !default; // 成功色
+$failed-color: #f8a5a5 !default; // 失败色
+$warning-color: #faad14 !default; // 警告色
+$error-color: #f8a5a5 !default; // 警告色
+$heading-color: #333333 !default; // 标题色
+$text-color: #666666 !default; // 主文本色
+$text-color-secondary: #999999 !default; // 次文本色
+$disabled-color: #d9d9d9 !default; // 失效色
+$border-radius-base: 8px !default; // 组件/浮层圆角
+$border-color-base: #d9d9d9 !default; // 边框色
+$box-shadow-base: 0 1px 4px rgba(0, 0, 0, 0.1) !default; // 浮层阴影
+$white: #fff;
+$black: #000;
+
+// Base Scaffolding Variables
+// ---
+
+// Background color for `<body>`
+$body-background: $white;
+// Base background color for most components
+$component-background: $white;
+// Popover background color
+$popover-background: $component-background;
+$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+	'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+$code-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+$font-size-base: 14px;
+$font-size-lg: $font-size-base + 2px;
+$font-size-sm: 12px;
+
+// height rules
+$height-base: 32px;
+$height-lg: 40px;
+$height-sm: 24px;
+
+// vertical paddings
+$padding-lg: 24px; // containers
+$padding-md: 16px; // small containers and buttons
+$padding-sm: 12px; // Form controls and items
+$padding-xs: 8px; // small items
+$padding-xss: 4px; // more small
+
+// vertical padding for all form controls
+//$control-padding-horizontal: @padding-sm;
+//$control-padding-horizontal-sm: @padding-xs;
+
+// vertical margins
+$margin-lg: 24px; // containers
+$margin-md: 16px; // small containers and buttons
+$margin-sm: 12px; // Form controls and items
+$margin-xs: 8px; // small items
+$margin-xss: 4px; // more small
+
+// z-index list, order by `z-index`
+$zindex-badge: auto;
+$zindex-table-fixed: auto;
+$zindex-affix: 10;
+$zindex-back-top: 10;
+$zindex-picker-panel: 10;
+$zindex-popup-close: 10;
+$zindex-modal: 1000;
+$zindex-modal-mask: 1000;
+$zindex-message: 1010;
+$zindex-notification: 1010;
+$zindex-popover: 1030;
+$zindex-dropdown: 1050;
+$zindex-picker: 1050;
+$zindex-tooltip: 1060;
+
+// menu
+$menu-bg: $primary-color;
+$menu-color: rgba(255, 255, 255, .8);
+$menu-font-size: 16px;
+$menu-font-weight: 400;
+$menu-active-font-weight: 500;
+$menu-active-font-size: 18px;
+$menu-active-color: rgba(255, 255, 255, 1);
+$menu-active-bg: rgba(255, 255, 255, 0.1);
+$menu-active-border-color: #4f42d3;
+$menu-active-border-width: 130px;
+$menu-active-border-height: 3px;
+$menu-item-width: 160px;
+$menu-item-transition: all .3s ease;
+
+// button
+$btn-primary-color: #fff;
+$btn-primary-bg: $link-color !default;
+$btn-primary-bg-hover: #addaff;
+
+$btn-default-color: $text-color;
+$btn-default-bg: $component-background;
+$btn-default-border: $border-color-base;
+
+$btn-disable-color: #fff;
+$btn-disable-bg: $disabled-color;
+$btn-disable-border: $border-color-base;
+
+$btn-danger-color: #fff;
+$btn-danger-bg: $error-color;
+$btn-danger-border: $error-color;
+
+$btn-font-size-base: $font-size-base;
+$btn-font-size-lg: $font-size-lg;
+$btn-font-size-sm: $font-size-sm;
+
+$btn-font-weight-base: 500;
+$btn-font-weight-lg: 500;
+$btn-font-weight-sm: 500;
+
+$btn-height-base: 32px;
+$btn-height-lg: 36px;
+$btn-height-sm: 28px;
+
+$btn-round-size-base: $btn-height-base;
+$btn-round-size-lg: $btn-height-lg;
+$btn-round-size-sm: $btn-height-sm;
+
+$btn-padding-sm: 4px 16px;
+$btn-padding-lg: 8px 16px;
+$btn-padding-base: 6px 16px;
+$btn-transition: all .3s ease;
+// Spin
+$spin-color-dark: $primary-color;
+$spin-color-light: $white;
+
+$spin-size-base: 20px;
+$spin-size-lg: $font-size-lg;
+$spin-size-sm: $font-size-sm;
+
+// Typography
+$typography-h1-font-size: 34px;
+$typography-h2-font-size: 30px;
+$typography-h3-font-size: 24px;
+$typography-h4-font-size: 18px;
+
+$typography-h1-color: $heading-color;
+$typography-h2-color: $heading-color;
+$typography-h3-color: $heading-color;
+$typography-h4-color: $heading-color;
+
+$typography-h1-font-weight: 600;
+$typography-h2-font-weight: 600;
+$typography-h3-font-weight: 600;
+$typography-h4-font-weight: 600;
+
+$typography-text-font-weight: 400;
+$typography-text-font-size-base: $font-size-base;
+$typography-text-font-size-sm: $font-size-sm;
+
+$typography-text-line-hight-base: $font-size-base * 1.5;
+$typography-text-line-hight-sm: $font-size-sm * 1.5;
+
+$typography-text-color-base: $text-color;
+$typography-text-color-secondary: $text-color-secondary;
+
+//Steps
+$steps-item-bg: #9ea1f3;
+$steps-item-color: #fff;
+$steps-item-size: 183px;
+$steps-item-ball-size: 35px;
+$steps-item-font-size: 16px;
+$steps-item-font-weight: 500;
+$steps-title-font-size: 16px;
+$steps-title-font-weight: 600;
+$steps-line-bg: $primary-color;
+$steps-line-width: 128px;
+$steps-line-height: 1px;
+$steps-line-margin: 0px 10px;
+$steps-active-bg: #fff;
+$steps-active-size: 25px;
+
+//Card
+$card-bg: #fff;
+$card-border-radius: 14px;
+$card-body-padding: 18px 25px 25px;
+
+$card-title-font-size: 16px;
+$card-title-color: $heading-color;
+$card-title-font-weight: 500;
+$card-title-margin-bottom: 6px;
+
+$card-desc-font-size: 14px;
+$card-desc-color: #999;
+$card-desc-font-weight: 400;
+$card-desc-margin-bottom: 10px;
+
+//Input
+$input-padding: 10px 16px;
+$input-focus-border-color: $link-color;
+$input-marinBottom: 20px;
+$input-border-radius: 4px;
+$input-bg: #fff;
+$input-border: 1px solid rgba(229, 229, 229, 1);
+$input-font-size: 14px;
+$input-color: $text-color;
+$input-placeholder-color: $text-color-secondary;
+$input-placeholder-left: 16px;
+$input-error-color: #f8a5a5;
+$input-error-message-font-size: 12px;
+$input-error-message-marginTop: 12px;
+
+//Pagination
+$pagination-active-color: $link-color;
+$pagination-font-size: 12px;
+$pagination-color: #606266;
+$pagination-item-size: 27px;
+$pagination-size-changer-top: 20px;
+$pagination-size-changer-bg: $component-background;
+$pagination-border-radius-base: 4px;
+$pagination-border-base: 1px solid rgba(163, 163, 163, 1);
+
+//Tooltip
+$tooltip-bg: rgba(0, 0, 0, .75);
+$tooltip-padding: 6px 8px;
+$tooltip-color: #fff;
+$tooltip-font-size: $font-size-base;
+$tooltip-max-width: 320px;
+$tooltip-min-width: 30px;
+
+// Popover
+$popover-bg: #fff;
+$popover-padding: 6px 8px;
+$popover-color: $text-color;
+$popover-font-size: $font-size-base;
+$popover-max-width: 320px;
+$popover-min-width: 30px;
+$popover-box-shadow: 2px 2px 12px rgba(0, 0, 0, .3);
+// message
+$message-box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+	0 9px 28px 8px rgba(0, 0, 0, 0.05);
+
+// Modal
+$modal-mask-bg: rgba(0, 0, 0, 0.55);
+
+$modal-padding: 42px 90px 56px;
+
+$modal-title-color: $heading-color;
+$modal-title-font-size: 22px;
+$modal-title-padding-bottom: 20px;
+
+$modal-close-btn-size: 21px;
+
+$modal-content-min-width: 320px;
+$modal-content-marign-bottom: 20px;
+
+$modal-footer-width: 150px;
+$modal-footer-font-weight: 400;
+$modal-footer-height: 38px;
+$modal-footer-button-space: 10px;
+$modal-footer-cancel-color: #999;
+
+//modal confirm
+$modal-confirm-padding: 60px 70px;
+$modal-confirm-content-margin-bottom: 47px;
+$modal-confirm-content-color: rgba(0, 0, 0, 0.65);

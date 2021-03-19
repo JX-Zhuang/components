@@ -1,0 +1,33 @@
+@import "../../style/index.scss";
+$spin-prefix-cls: genPrefix(spin);
+.#{$spin-prefix-cls} {
+	display: inline-flex;
+	width: $spin-size-base * 2;
+	height: $spin-size-base * 2;
+	align-items: center;
+	justify-content: center;
+	font-size: $spin-size-base;
+	color: $spin-color-dark;
+	span {
+		display: inline-block;
+		position: relative;
+		-webkit-animation: #{$spin-prefix-cls}-loadingCircle 1s infinite linear;
+		animation: #{$spin-prefix-cls}-loadingCircle 1s infinite linear;
+	}
+}
+.#{$spin-prefix-cls}-large {
+	width: $spin-size-lg * 2;
+	height: $spin-size-lg * 2;
+	font-size: $spin-size-lg;
+}
+.#{$spin-prefix-cls}-small {
+	width: $spin-size-sm * 2;
+	height: $spin-size-sm * 2;
+	font-size: $spin-size-sm;
+}
+@keyframes #{$spin-prefix-cls}-loadingCircle {
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}

@@ -1,0 +1,22 @@
+<meta name="keywords" content="React, React.js" />
+<meta name="description" content="" />
+
+<meta property="og:title" content="Components React" />
+<meta property="og:site_name" content="Components React" />
+<meta
+  property="og:description"
+  content="This is the React implementation of the HRTPS Design System. HRTPS is a series of individual styles and components, that when combined make beautiful, intuitive designs."
+/>
+<link rel="icon" type="image/png" href="/favicon.png" sizes="192x192" />
+<script>
+  document.title = 'UI Components';
+  var observer = new MutationObserver(function (mutations) {
+    if (document.title.match(/Storybook$/)) {
+      document.title = 'UI Components';
+    }
+  }).observe(document.querySelector('title'), {
+    childList: true,
+    subtree: true,
+    characterData: true
+  });
+</script>

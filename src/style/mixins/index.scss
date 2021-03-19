@@ -1,0 +1,29 @@
+@mixin textOverflow {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+@mixin close($height,$width,$bg) {
+	position: relative;
+	&::after {
+		top: 50%;
+		left: 50%;
+		position: absolute;
+		transform: translate(-50%, -50%) rotate(-45deg);
+		background: $bg;
+		height: $height;
+		width: $width;
+		content: ' ';
+	}
+	&::before {
+		top: 50%;
+		left: 50%;
+		position: absolute;
+		transform: translate(-50%, -50%) rotate(45deg);
+		background: $bg;
+		height: $height;
+		width: $width;
+		content: ' ';
+	}
+}

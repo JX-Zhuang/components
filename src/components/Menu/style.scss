@@ -1,0 +1,43 @@
+@import '../../style/index.scss';
+$menu-prefix-cls: genPrefix(menu);
+.#{$menu-prefix-cls} {
+	height: 70px;
+	width: 100%;
+	background: $menu-bg;
+	color: $menu-color;
+	font-weight: $menu-font-weight;
+	font-size: $menu-font-size;
+	display: flex;
+	flex-wrap: nowrap;
+	&-item {
+		width: $menu-item-width;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		transition: $menu-item-transition;
+		&:hover {
+			font-weight: $menu-active-font-weight;
+			font-size: $menu-active-font-size;
+			color: $menu-active-color;
+		}
+	}
+	&-active {
+		position: relative;
+		font-weight: $menu-active-font-weight;
+		font-size: $menu-active-font-size;
+		background: $menu-active-bg;
+		color: $menu-active-color;
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			background: $menu-active-border-color;
+			width: $menu-active-border-width;
+			height: $menu-active-border-height;
+		}
+	}
+}

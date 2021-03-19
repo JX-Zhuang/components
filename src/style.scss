@@ -1,0 +1,16 @@
+@import './components/Button/style.scss';
+@import './components/Card/style.scss';
+@import './components/Input/style.scss';
+@import './components/Menu/style.scss';
+@import './components/Message/style.scss';
+@import './components/Modal/style.scss';
+@import './components/Pagination/style.scss';
+@import './components/Spin/style.scss';
+@import './components/Steps/style.scss';
+@import './components/Tooltip/style.scss';
+@import './components/Popover/style.scss';
+@import './components/Typography/style.scss';
+* {
+	font-family: "PingFang SC", "Microsoft YaHei", "Droid Sans", sans-serif;
+	font-size: $font-size-base;
+}

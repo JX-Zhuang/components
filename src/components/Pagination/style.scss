@@ -1,0 +1,104 @@
+@import "../../style/index.scss";
+$pagination-prefix-cls: genPrefix(pagination);
+.#{$pagination-prefix-cls} {
+	* {
+		padding: 0;
+	}
+	font-size: $pagination-font-size;
+	color: $pagination-color;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	&-next-page,
+	&-prev-page {
+		cursor: pointer;
+		line-height: $pagination-item-size;
+		width: $pagination-item-size;
+		text-align: center;
+	}
+	&-pages {
+		display: flex;
+		flex-wrap: nowrap;
+		li {
+			min-width: $pagination-item-size;
+			line-height: $pagination-item-size;
+			text-align: center;
+			list-style: none;
+			cursor: pointer;
+		}
+		&-active {
+			background: $pagination-active-color;
+			border-radius: $pagination-border-radius-base;
+			color: #fff;
+		}
+		&-more {
+			cursor: auto;
+			&:before {
+				content: '...';
+			}
+		}
+	}
+	&-quick-jumper {
+		display: flex;
+		flex-wrap: nowrap;
+		margin: 0 10px;
+		line-height: 27px;
+		input {
+			font-size: $pagination-font-size;
+			color: $pagination-color;
+			margin: 0 8px;
+			padding: 0 5px;
+			width: $pagination-item-size;
+			height: $pagination-item-size;
+			border-radius: $pagination-border-radius-base;
+			border: $pagination-border-base;
+			outline: none;
+			box-sizing: border-box;
+		}
+	}
+	&-size-changer {
+		position: relative;
+		border-radius: $pagination-border-radius-base;
+		border: $pagination-border-base;
+		margin: 0 10px;
+		cursor: pointer;
+		&-page-size-selector {
+			position: relative;
+			line-height: $pagination-item-size;
+			padding: 0 20px 0 10px;
+			&:after {
+				content: '>';
+				transform: rotate(90deg);
+				display: inline-block;
+				position: absolute;
+				right: 5px;
+			}
+		}
+		ul {
+			position: absolute;
+			top: $pagination-size-changer-top;
+			text-align: center;
+			background: $pagination-size-changer-bg;
+			box-shadow: $box-shadow-base;
+			width: 100%;
+			z-index: $zindex-popup-close;
+		}
+		li {
+			list-style: none;
+			line-height: $pagination-item-size;
+			padding: 0 10px;
+			&:hover {
+				background: rgba(0, 0, 0, .1);
+			}
+		}
+		& &-active {
+			background: $pagination-active-color;
+			color: #fff;
+			&:hover {
+				background: $pagination-active-color;
+				color: #fff;
+			}
+		}
+	}
+}
