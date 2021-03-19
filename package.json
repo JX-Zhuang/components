@@ -1,0 +1,76 @@
+{
+  "name": "ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook",
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "prettier": "prettier --write .",
+    "build": "npm run build:typescript && npm run build:sass && npm run build:cpsass",
+    "build:typescript": "rm -rf ./lib && tsc --build buildTsConfig.json",
+    "build:sass": "./node_modules/node-sass/bin/node-sass  -r ./src/ -o ./lib/ --output-style compressed",
+    "build:cpsass": "rsync -a --prune-empty-dirs --include '*/' --include '*.scss' --exclude '*' ./src/ ./lib/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-transform-react-jsx": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@storybook/addon-a11y": "^5.3.19",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-backgrounds": "^5.3.19",
+    "@storybook/addon-centered": "^5.3.19",
+    "@storybook/addon-contexts": "^5.3.19",
+    "@storybook/addon-controls": "^6.0.0-beta.15",
+    "@storybook/addon-cssresources": "^5.3.19",
+    "@storybook/addon-design-assets": "^5.3.19",
+    "@storybook/addon-docs": "^5.3.19",
+    "@storybook/addon-info": "^5.3.19",
+    "@storybook/addon-jest": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/preset-typescript": "^3.0.0",
+    "@storybook/react": "^5.3.19",
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^26.0.3",
+    "@types/react-dom": "^16.9.8",
+    "babel-jest": "^26.1.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.6.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "fork-ts-checker-webpack-plugin": "^5.0.5",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "lint-staged": "^10.2.11",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.0.5",
+    "react-docgen-typescript-loader": "^3.7.2",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "ts-jest": "^26.1.1",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,d.ts,ts,tsx,json,css,less}": [
+      "prettier --write"
+    ]
+  }
+}
